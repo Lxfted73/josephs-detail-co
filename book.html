@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Book — Joseph's Detail Co.</title>
+  <meta name="description" content="Request a maintenance slot. $50 a side, $100 combo, $10 deposit, +$20 oversized. Send photos of the worst spot." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="index.html">
+        <div class="mark">J</div>
+        <div><strong>Joseph's Detail Co.</strong><span>Request</span></div>
+      </a>
+      <div class="nav-tools">
+        <a class="cta" href="book.html">Book</a>
+        <button class="menu-btn" type="button" aria-expanded="false">Menu</button>
+      </div>
+      <nav class="links">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="science.html">The science</a>
+        <a href="faq.html">FAQ</a>
+        <a href="about.html">About</a>
+        <a class="active" href="book.html">Book</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Intake first. Then pictures.</p>
+      <h1>Show us the worst spot.</h1>
+      <p class="lede">Name, how to reach you, interior / exterior / both, vehicle size, intake radios, and two daylight photos. Email <a href="mailto:josephsdetailco@protonmail.com">josephsdetailco@protonmail.com</a>. $10 deposit holds the slot. Oversized: +$10 a side, +$20 combo. Problems can be present; we still only do the menu.</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="wrap" style="max-width:640px">
+      <form class="card" id="book-form">
+        <div>
+          <label for="name">Name</label>
+          <input id="name" name="name" required autocomplete="name" placeholder="Your name" />
+        </div>
+        <div>
+          <label for="contact">Phone or email</label>
+          <input id="contact" name="contact" required autocomplete="tel" placeholder="How to reach you" />
+        </div>
+        <div>
+          <label for="service">Service</label>
+          <select id="service" name="service">
+            <option>Exterior only — $50 · $10 to hold · about 1 hour</option>
+            <option>Interior only — $50 · $10 to hold · about 1 hour</option>
+            <option selected>Combo — $100 · $10 to hold · about 2 hours</option>
+          </select>
+        </div>
+        <div>
+          <label for="size">Vehicle size</label>
+          <select id="size" name="size">
+            <option selected>Sedan / coupe / small crossover — menu price</option>
+            <option>Mid-size SUV / short-bed truck — menu price if it stays near 2 hours</option>
+            <option>Full-size truck / 3-row SUV / van — +$10 a side, +$20 combo</option>
+          </select>
+        </div>
+
+        <fieldset style="border:0;padding:0">
+          <legend class="note" style="margin-bottom:8px;color:var(--muted);font-size:13px">Intake — is any of this present?</legend>
+          <p class="note" style="margin-bottom:10px">Mold or mildew, deep / foul odor, carpet stains, swirl marks, or anything we do not treat. We can still book the visit. We will not solve that problem — only the wash, vac, and wipe on the menu.</p>
+          <div class="radio-block">
+            <label class="choice">
+              <input type="radio" name="out_of_scope" value="no" required />
+              <span>No. Normal dirty daily driver. Maintenance only.</span>
+            </label>
+            <label class="choice">
+              <input type="radio" name="out_of_scope" value="present_ok" />
+              <span>Yes, one of those is present. Still book the maintenance visit. I know it will not be fixed.</span>
+            </label>
+            <label class="choice">
+              <input type="radio" name="out_of_scope" value="want_fixed" />
+              <span>Yes, and I need that problem solved. This is the wrong shop.</span>
+            </label>
+            <label class="choice">
+              <input type="radio" name="out_of_scope" value="unsure" />
+              <span>Not sure. Photos will show it.</span>
+            </label>
+          </div>
+        </fieldset>
+
+        <div>
+          <label for="photos">Photos of the concern</label>
+          <p class="note" style="margin:6px 0 8px">The dirty wheel, the seat, the hood, the spot you keep noticing. Daylight helps.</p>
+          <input type="file" name="photos" id="photos" accept="image/*" multiple />
+          <p class="note" id="photo-list" style="margin-top:8px"></p>
+        </div>
+        <div>
+          <label for="concern">Optional — what are we looking at?</label>
+          <input id="concern" name="concern" placeholder="e.g. passenger seat, driver’s wheel, whole car is dusty" />
+        </div>
+
+        <fieldset style="border:0;padding:0">
+          <legend class="note" style="margin-bottom:8px;color:var(--muted);font-size:13px">Completed-work gallery</legend>
+          <p class="note" style="margin-bottom:10px">After photos may go on a gallery page. Plates cropped. No kids, no house numbers, no junk on the seats.</p>
+          <div class="radio-block">
+            <label class="choice">
+              <input type="radio" name="gallery" value="yes" />
+              <span>Yes — you may use after photos of this car in the gallery.</span>
+            </label>
+            <label class="choice">
+              <input type="radio" name="gallery" value="no" checked />
+              <span>No — quote only. Do not post.</span>
+            </label>
+          </div>
+        </fieldset>
+
+        <div class="card" style="box-shadow:none;padding:14px">
+          <h3 style="font-size:16px">$10 deposit</h3>
+          <p class="note" style="margin-top:8px">
+            After photos, $10 holds interior, exterior, or the combo and comes off the total ($50 / $100, or $60 a side / $120 combo if oversized).
+            We still take the deposit if mildew or stains are present and you chose the maintenance-only radio.
+            Cancel by the night before and it is not kept. Same-day no-show keeps the $10.
+            Payment link or Venmo / Cash App details come with the confirmation text.
+          </p>
+        </div>
+
+        <button type="submit">Open email to send</button>
+        <p class="note" style="margin-top:12px">
+          This opens your mail app to <a href="mailto:josephsdetailco@protonmail.com">josephsdetailco@protonmail.com</a>.
+          Attach two daylight photos before you hit send. Phone pictures stay on your device until you attach them.
+        </p>
+        <p class="legal">
+          Name, contact, photos, and notes quote and schedule this job. They are not sold.
+          Gallery use happens only if you pick yes above. Delete request: email that address and say so.
+        </p>
+      </form>
+    </div>
+  </section>
+  <footer>
+    <div class="wrap">
+      <div>Joseph's Detail Co. · Port Orchard, WA · <a href="mailto:josephsdetailco@protonmail.com">josephsdetailco@protonmail.com</a></div>
+      <div><a href="faq.html">FAQ</a></div>
+    </div>
+  </footer>
+  <script src="nav.js"></script>
+  <script>
+    const form = document.getElementById("book-form");
+    const photos = document.getElementById("photos");
+    const list = document.getElementById("photo-list");
+    photos.addEventListener("change", () => {
+      const names = [...photos.files].map(f => f.name);
+      list.textContent = names.length
+        ? names.length + " photo(s): " + names.join(", ")
+        : "";
+    });
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const scope = form.out_of_scope.value;
+      const name = form.name.value.trim();
+      const contact = form.contact.value.trim();
+      const service = form.service.value;
+      const size = form.size.value;
+      const concern = form.concern.value.trim();
+      const gallery = form.gallery.value;
+      const photoNote = photos.files.length
+        ? photos.files.length + " photo(s) selected on this page — attach them in the email before sending."
+        : "Attach 2 daylight photos of the worst spot before sending.";
+      let scopeLine = "Intake: normal dirty daily driver — maintenance only.";
+      if (scope === "present_ok") {
+        scopeLine = "Intake: problem present. Customer wants maintenance visit anyway — will not be treated.";
+      } else if (scope === "want_fixed") {
+        scopeLine = "Intake: customer needs the problem solved. Wrong shop — do not book as a fix.";
+      } else if (scope === "unsure") {
+        scopeLine = "Intake: not sure. Photos will show it.";
+      }
+      const galleryLine = gallery === "yes"
+        ? "Gallery: yes — after photos ok, plates cropped."
+        : "Gallery: no — quote only.";
+      const body = [
+        "Name: " + name,
+        "Reach me: " + contact,
+        "Service: " + service,
+        "Vehicle size: " + size,
+        scopeLine,
+        galleryLine,
+        concern ? "Note: " + concern : "",
+        photoNote,
+        "",
+        "Two daylight photos attached."
+      ].filter(Boolean).join("\n");
+      const subject = scope === "want_fixed"
+        ? "Detail request (wants problem solved) — " + name
+        : scope === "present_ok"
+        ? "Detail request (problem present, maintenance only) — " + name
+        : "Detail request — " + name;
+      window.location.href =
+        "mailto:josephsdetailco@protonmail.com?subject=" +
+        encodeURIComponent(subject) +
+        "&body=" +
+        encodeURIComponent(body);
+    });
+  </script>
+</body>
+</html>
