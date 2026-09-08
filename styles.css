@@ -182,6 +182,29 @@ button[type=submit] {
 .radio-block input[type=radio] {
   width: auto; margin-top: 3px; accent-color: var(--gold); flex-shrink: 0;
 }
+.mail-warn {
+  background: #2a1a12;
+  border: 2px solid #c45c3a;
+  border-radius: var(--radius);
+  padding: 16px 16px 14px;
+  color: #f4e6d8;
+}
+.mail-warn strong {
+  display: block;
+  font-size: 18px;
+  line-height: 1.25;
+  color: #ffd2b8;
+  margin-bottom: 8px;
+  letter-spacing: .01em;
+}
+.mail-warn p {
+  font-size: 14px;
+  line-height: 1.45;
+  color: #e8d5c6;
+  margin: 0 0 8px;
+}
+.mail-warn p:last-child { margin-bottom: 0; }
+
 .legal {
   font-size: 12px;
   color: var(--muted);

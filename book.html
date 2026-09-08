@@ -31,9 +31,9 @@
 
   <section class="hero">
     <div class="wrap">
-      <p class="eyebrow">Intake first. Then pictures.</p>
-      <h1>Show us the worst spot.</h1>
-      <p class="lede">Name, how to reach you, interior / exterior / both, vehicle size, intake radios, and two daylight photos. Email <a href="mailto:josephsdetailco@protonmail.com">josephsdetailco@protonmail.com</a>. $10 deposit holds the slot. Oversized: +$10 a side, +$20 combo. Problems can be present; we still only do the menu.</p>
+      <p class="eyebrow">Intake first. Pictures in the email.</p>
+      <h1>Request a maintenance slot.</h1>
+      <p class="lede">Name, how to reach you, interior / exterior / both, vehicle size, and the intake radios. Then attach two daylight photos of the worst spot in the email that opens. Email <a href="mailto:josephsdetailco@protonmail.com">josephsdetailco@protonmail.com</a>. $10 deposit holds the slot. Oversized: +$10 a side, +$20 combo. Problems can be present; we still only do the menu.</p>
     </div>
   </section>
 
@@ -89,12 +89,6 @@
         </fieldset>
 
         <div>
-          <label for="photos">Photos of the concern</label>
-          <p class="note" style="margin:6px 0 8px">The dirty wheel, the seat, the hood, the spot you keep noticing. Daylight helps.</p>
-          <input type="file" name="photos" id="photos" accept="image/*" multiple />
-          <p class="note" id="photo-list" style="margin-top:8px"></p>
-        </div>
-        <div>
           <label for="concern">Optional — what are we looking at?</label>
           <input id="concern" name="concern" placeholder="e.g. passenger seat, driver’s wheel, whole car is dusty" />
         </div>
@@ -124,10 +118,16 @@
           </p>
         </div>
 
-        <button type="submit">Open email to send</button>
+        <div class="mail-warn" role="alert">
+          <strong>Your email app will open next. That is supposed to happen.</strong>
+          <p>A draft to josephsdetailco@protonmail.com opens with your answers filled in. Attach two daylight photos of the concern — the dirty wheel, the seat, the hood, the spot you keep noticing — then tap Send.</p>
+          <p>Nothing is a virus and nothing is billed. The message is only sent when you tap Send. Do not close the mail app thinking it is a pop-up.</p>
+        </div>
+
+        <button type="submit">Open email app with this request</button>
         <p class="note" style="margin-top:12px">
-          This opens your mail app to <a href="mailto:josephsdetailco@protonmail.com">josephsdetailco@protonmail.com</a>.
-          Attach two daylight photos before you hit send. Phone pictures stay on your device until you attach them.
+          Goes to <a href="mailto:josephsdetailco@protonmail.com">josephsdetailco@protonmail.com</a>.
+          Remember to attach the photos before you send.
         </p>
         <p class="legal">
           Name, contact, photos, and notes quote and schedule this job. They are not sold.
@@ -145,14 +145,6 @@
   <script src="nav.js"></script>
   <script>
     const form = document.getElementById("book-form");
-    const photos = document.getElementById("photos");
-    const list = document.getElementById("photo-list");
-    photos.addEventListener("change", () => {
-      const names = [...photos.files].map(f => f.name);
-      list.textContent = names.length
-        ? names.length + " photo(s): " + names.join(", ")
-        : "";
-    });
     form.addEventListener("submit", (e) => {
       e.preventDefault();
       const scope = form.out_of_scope.value;
@@ -162,9 +154,6 @@
       const size = form.size.value;
       const concern = form.concern.value.trim();
       const gallery = form.gallery.value;
-      const photoNote = photos.files.length
-        ? photos.files.length + " photo(s) selected on this page — attach them in the email before sending."
-        : "Attach 2 daylight photos of the worst spot before sending.";
       let scopeLine = "Intake: normal dirty daily driver — maintenance only.";
       if (scope === "present_ok") {
         scopeLine = "Intake: problem present. Customer wants maintenance visit anyway — will not be treated.";
@@ -184,9 +173,8 @@
         scopeLine,
         galleryLine,
         concern ? "Note: " + concern : "",
-        photoNote,
         "",
-        "Two daylight photos attached."
+        "ATTACH: two daylight photos of the concern (wheel, seat, hood, or the spot you keep noticing) before you tap Send."
       ].filter(Boolean).join("\n");
       const subject = scope === "want_fixed"
         ? "Detail request (wants problem solved) — " + name
